@@ -111,8 +111,12 @@ $blue: mix(#00d1ff, #008ed6);
   @extend %stretch;
   @extend %no-tap;
   overflow: hidden;
+  display: none;
   &.fotorama__active {
     z-index: 8;
+  }
+  &.fotorama__loaded {
+    display: block;
   }
 }
 
