@@ -234,6 +234,8 @@ function getDataFromHtml ($el) {
   function getDataFromImg ($img, imgData, checkVideo) {
     var $child = $img.children('img').eq(0),
         _imgHref = $img.attr('href'),
+        _imgAlt = $img.attr('alt'),
+        _thumbAlt = $child.attr('alt'),
         _imgSrc = $img.attr('src'),
         _imgSrcset = $img.attr('srcset'),
         _thumbSrc = $child.attr('src'),
@@ -245,10 +247,10 @@ function getDataFromHtml ($el) {
     } else {
       video = _video;
     }
-
     getDimensions($img, $child, $.extend(imgData, {
       video: video,
       img: imgData.img || _imgHref || _imgSrc || _thumbSrc,
+      alt: _imgAlt || _thumbAlt || '',
       thumb: imgData.thumb || _thumbSrc || _imgSrc || _imgHref,
       srcset: _imgSrcset
     }));

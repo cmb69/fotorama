@@ -561,6 +561,9 @@ jQuery.Fotorama = function ($fotorama, opts) {
 
       frameData.state = '';
       img.src = src;
+      if (frameData.data.hasOwnProperty('alt')) {
+          img.alt= frameData.data.alt;
+      }
       if (dataFrame.srcset) {
         img.srcset = dataFrame.srcset;
       }      
